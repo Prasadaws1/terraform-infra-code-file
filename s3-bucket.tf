@@ -27,7 +27,7 @@ count = var.abc
 bucket = "my-bucket-${count.index}"
 }
 
-variable "abc" {:wq
+variable "abc" {
 type = number
 default =3
 }
