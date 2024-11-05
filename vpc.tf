@@ -31,6 +31,6 @@ Name = "myroutetable"
 vpc_id = aws_vpc.one.id
 route {
 gateway_id = aws_internet_gateway.three.id
-cidr_block = "0.0.0.0./0"
+cidr_block = "0.0.0.0/0"
 }
 }
