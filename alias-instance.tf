@@ -23,13 +23,21 @@ volume_size = var.volume
 count = var.my-count
 }
 
-####resources of us-east-1a#####
 resource "aws_instance" "two" {
-provider = awsvariable "name" {
-description = "my-newinstance"
-type = string
-default = "my-tg-instnace"
+provider = aws.usa
+tags = {
+Name = var.us-name
 }
+ami = var.us-ami
+instance_type = var.us-instance-type
+availability_zone = var.us-zone
+key_name = var.us-key
+root_block_device {
+volume_size = var.us-volume
+}
+count = var.us-my-count
+}
+
 
 
 ######variables ####################
@@ -79,7 +87,7 @@ default = "t2.micro"
 
 variable "us-zone" {
 type = string
-default = "ap-south1a"
+default = "us-east-1a"
 }
 
 
