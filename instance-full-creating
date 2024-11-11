@@ -36,3 +36,7 @@ root_block_device {
 volume_size = 10
 }
 }
+
+output "my-outputs" {
+value = [aws_instance.one-tf[1].id, aws_instance.one-tf[0].public_ip]
+}
