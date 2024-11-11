@@ -46,3 +46,10 @@ value = [aws_instance.one-tf[1].id, aws_instance.one-tf[0].public_ip]
 resource "aws" "mybucket" {
 bucket = "myterraform.s3.bucket"
 }
+
+##################bacup with s3############################
+terraform {
+backup "s3" {
+bucket = "myterraform.s3.bucket"
+key = prasd/state.files
+bhbch
