@@ -40,3 +40,9 @@ volume_size = 10
 output "my-outputs" {
 value = [aws_instance.one-tf[1].id, aws_instance.one-tf[0].public_ip]
 }
+
+
+##########################s3bucket##################################
+resource "aws" "mybucket" {
+bucket = "myterraform.s3.bucket"
+}
