@@ -32,4 +32,18 @@ type = number
 default =3
 }
 
+####################################################################################------multipleS3bucket----------------------------------------###############################
+provider "aws" {
+region = "ap-south-1"
+}
 
+
+resource "aws_s3_bucket" "two" {
+for_each = toset(var.xyz)
+bucket = each.key
+}
+
+variable "xyz" {
+default = ["jenkins.prasad.tf", "docker.prasad.tf"]
+
+}
