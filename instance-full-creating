@@ -1,0 +1,38 @@
+provider "aws" {
+region = "ap-south-1"
+}
+
+
+resource "aws_security_group" "mysg" {
+name = "my-terraform-sg"
+description = "creating sg for new projrct"
+
+ingress {
+from_port = 8081
+to_port = 8081
+protocol = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+
+egress {
+from_port = 0
+to_port = 0
+protocol = "-1"
+cidr_blocks = ["0.0.0.0/0"]
+}
+}
+
+resource "aws_instance" "one-tf" {
+tags = {
+Name = "my-instance"
+}
+ami = "ami-03753afda9b8ba740"
+instance_type = "t2.micro"
+availability_zone = "ap-south-1a"
+key_name = "5newpair"
+vpc_security_group_ids = [aws_security_group.mysg.id]           --->>>>>##### in this place we added a our security group##
+count = 2
+root_block_device {
+volume_size = 10
+}
+}
