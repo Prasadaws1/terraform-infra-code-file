@@ -47,9 +47,15 @@ resource "aws" "mybucket" {
 bucket = "myterraform.s3.bucket"
 }
 
+resource "aws_s3_bucket" "many" {
+count = var.abc
+bucket = "my-terraform-${count.index}"
+}
 ##################bacup with s3############################
 terraform {
 backup "s3" {
 bucket = "myterraform.s3.bucket"
 key = prasd/state.files
-bhbch
+region = "ap-south1a"
+}
+}
