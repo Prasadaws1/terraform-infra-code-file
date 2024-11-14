@@ -3,7 +3,7 @@ region = "ap-south-1"
 }
 
 ##################security##########
-resource "aws_security_group" "mysggroup" {
+resource "aws_security_group" "mysggroups" {
 name = "${terraform.workspace}-mysg"
 description = "all in one"
 
