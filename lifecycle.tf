@@ -10,3 +10,6 @@ ignore_changes = [tags, instance_type, instance_type] ##########################
 lifecycle {
 create_before_destroy = true ###############--------------------->>>>>>>>>>>>>>> this can help to create one instance before tey destroy
 }
+
+
+
