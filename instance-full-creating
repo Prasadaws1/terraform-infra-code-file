@@ -3,7 +3,7 @@ region = "ap-south-1"
 }
 
 
-resource "aws_security_group" "mysgs" {
+resource "aws_security_group" "mysg" {
 name = "my-terraform-sg"
 description = "creating sg for new projrct"
 
