@@ -30,7 +30,7 @@ Name = "${terraform.workspace}-server"
 ami = "ami-03753afda9b8ba740"
 instance_type = "t2.micro"
 availability_zone = "ap-south-1a"
-key_name = "5newpair"
+key_name = "nov-new-pair"
 vpc_security_group_ids = [aws_security_group.mysg.id]
 count = 2
 root_block_device {
